@@ -19,6 +19,7 @@ import {
 
 import { StackNavigator } from 'react-navigation'; // Version can be specified in package.json
 
+//vistas
 import DetailsScreen from './screens/DetailsScreen';
 import Ejemplo2 from './screens/Ejemplo2';
 import Prueba1 from './screens/Prueba1';
@@ -27,10 +28,10 @@ import FlatListBasics from './screens/FlatListBasics'
 import ListViewMovie from './screens/ListViewMovie'
 import App from './screens/App'
 
+import NativeBase from './screens/NativeBase'
 
-
-
-import ComponentText from './componenteTexto'
+//componente
+import ComponentText from './components/componenteTexto'
 
 class Navegaciones extends React.Component {
 
@@ -44,6 +45,13 @@ class Navegaciones extends React.Component {
         <Text>Home Screen</Text>
         <ComponentText/>
         
+
+<Button
+  title='NativeBase'
+  onPress={() => {
+    this.props.navigation.navigate('NativeBase');
+  }}
+></Button>
 
 <Button
   title='Prueba1'
@@ -144,7 +152,10 @@ export default StackNavigator({
     },
     ListViewMovie:{
       screen: ListViewMovie,
-    }
+    },
+    NativeBase:{
+      screen: NativeBase,
+    },
   },
 
   {
